@@ -1,24 +1,46 @@
-const http = require('http')
+const http = require('http');
+const fs = require('fs');
 
 const server = http.createServer((req, res) => {
     // console.log(req.url, req.method, req.headers);
     // process.exit(1);
-    const { url, method, headers, body } = req
+    const { url, method, headers } = req;
+
     if (url === '/') {
-        res.write('<html>')
-        res.write('<head><title>Enter Message</title>')
+        res.write('<html>');
+        res.write('<head><title>Enter Message</title>');
         res.write(
             '<body><form action="/message" method="POST"><input name="message" type="text><button type="submit">Send</button></form></body>'
-        )
-        res.write('</html>')
-        return res.end()
+        );
+        res.write('</html>');
+        return res.end();
     }
-    res.setHeader('Content-Type', 'text/html')
-    res.write('<html>')
-    res.write('<head><title>My First Page</title>')
-    res.write('<body><h1>Hello from my Node.js Server!</h1></body>')
-    res.write('</html>')
-    res.end()
-})
 
-server.listen(3000)
+    if (url === '/message' && method === 'POST') {
+        const body = [];
+
+        req.on('data', chunk => {
+            console.log(chunk);
+            body.push(chunk);
+        });
+
+        req.on('end', () => {
+            const parsedBody = Buffer.concat(body).toString();
+            console.log(parsedBody);
+            fs.writeFileSync('message.txt', `dummy: ${parsedBody}`);
+        });
+
+        res.statusCode = 302;
+        res.setHeader('Location', '/');
+        return res.end();
+    }
+
+    res.setHeader('Content-Type', 'text/html');
+    res.write('<html>');
+    res.write('<head><title>My First Page</title>');
+    res.write('<body><h1>Hello from my Node.js Server!</h1></body>');
+    res.write('</html>');
+    res.end();
+});
+
+server.listen(3000);
