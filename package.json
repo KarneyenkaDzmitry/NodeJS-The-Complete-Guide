@@ -4,6 +4,7 @@
     "description": "Practice of the course: NodeJS - The Complete Guide (incl. MVC, REST APIs, GraphQL)",
     "main": "app.js",
     "scripts": {
+        "task1": "node \"tasks/task_1/server.js\"",
         "start": "node app.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
