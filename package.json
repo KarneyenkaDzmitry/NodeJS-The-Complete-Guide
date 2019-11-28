@@ -1,18 +1,19 @@
 {
-  "name": "udemy_nodejs_complete_guide",
-  "version": "1.0.0",
-  "description": "Practice of the course: NodeJS - The Complete Guide (incl. MVC, REST APIs, GraphQL)",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "NodeJS",
-    "MVC",
-    "REST",
-    "APIs",
-    "GraphQL"
-  ],
-  "author": "Dzmitry_Karneyenka",
-  "license": "ISC"
+    "name": "udemy_nodejs_complete_guide",
+    "version": "1.0.0",
+    "description": "Practice of the course: NodeJS - The Complete Guide (incl. MVC, REST APIs, GraphQL)",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "NodeJS",
+        "MVC",
+        "REST",
+        "APIs",
+        "GraphQL"
+    ],
+    "author": "Dzmitry_Karneyenka",
+    "license": "ISC"
 }
