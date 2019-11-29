@@ -4,10 +4,12 @@
     "description": "Practice of the course: NodeJS - The Complete Guide (incl. MVC, REST APIs, GraphQL)",
     "main": "app.js",
     "scripts": {
-        "task1": "node \"tasks/task_1/server.js\"",
         "start": "node app.js",
         "dev:start": "nodemon app.js",
+        "task1": "node \"tasks/task_1/server.js\"",
+        "task2": "node \"tasks/task_2/server.js\"",
         "dev:task1": "nodemon \"tasks/task_1/server.js\"",
+        "dev:task2": "nodemon \"tasks/task_2/server.js\"",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [
