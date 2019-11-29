@@ -6,6 +6,7 @@
     "scripts": {
         "task1": "node \"tasks/task_1/server.js\"",
         "start": "node app.js",
+        "dev:task1":"nodemon \"tasks/task_1/server.js\"",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [
@@ -16,5 +17,8 @@
         "GraphQL"
     ],
     "author": "Dzmitry_Karneyenka",
-    "license": "ISC"
+    "license": "ISC",
+    "devDependencies": {
+        "nodemon": "^2.0.1"
+    }
 }
