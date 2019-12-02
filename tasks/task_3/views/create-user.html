@@ -9,18 +9,30 @@
     </head>
     <body>
         <header>
-            <nav></nav>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li>
+                        <a class="active" href="/create-user">Create User</a>
+                    </li>
+                    <li><a href="/users">Users</a></li>
+                </ul>
+            </nav>
         </header>
         <main>
             <h1>Create User Page</h1>
-            <form action="/create-user" method="post">
-                <input
-                    type="text"
-                    name="username"
-                    placeholder="Username"
-                /><button type="submit">
-                    Create
-                </button>
+            <form class="user-form" action="/create-user" method="post">
+                <div class="form-control">
+                    <label for="username">Username</label>
+                    <input
+                        type="text"
+                        name="username"
+                        placeholder="Username"
+                        id="username"
+                    /><button type="submit">
+                        Create
+                    </button>
+                </div>
             </form>
         </main>
     </body>
