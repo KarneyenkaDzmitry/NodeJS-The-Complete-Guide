@@ -1,0 +1,5 @@
+Task description.
+
+1. Based on task 3 add the ability to show a list of entered names of users;
+
+2. Use one of the rendering engines to views: Ejs | Handlebars | Pug.
