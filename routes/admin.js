@@ -1,5 +1,6 @@
 const express = require('express');
 const { join } = require('path');
+const db = [];
 
 const router = express.Router();
 
@@ -8,7 +9,8 @@ router.get('/add-product', (req, res, next) => {
 });
 
 router.post('/add-product', (req, res, next) => {
-    console.log(req.body);
+    db.push(req.body);
+    console.log(db);
     res.redirect('/');
 });
 
