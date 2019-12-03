@@ -12,3 +12,5 @@
 #### Documentation
 
 -   https://pugjs.org/api/getting-started.html
+-   https://handlebarsjs.com/
+-   http://ejs.co/#docs
