@@ -5,7 +5,8 @@ const db = [];
 const router = express.Router();
 
 router.get('/add-product', (req, res, next) => {
-    res.sendFile(join(__dirname, '..', 'views', 'add-product.html'));
+    // res.sendFile(join(__dirname, '..', 'views', 'add-product.html'));
+    res.render('add-product');
 });
 
 router.post('/add-product', (req, res, next) => {
@@ -14,4 +15,4 @@ router.post('/add-product', (req, res, next) => {
     res.redirect('/');
 });
 
-module.exports = router;
+module.exports = { router, db };

@@ -8,3 +8,7 @@
 
     - Pug (Jade) ===    p #{name} ;
     - Handlebars ===    <p>{{ name }}</p>
+
+#### Documentation
+
+-   https://pugjs.org/api/getting-started.html
