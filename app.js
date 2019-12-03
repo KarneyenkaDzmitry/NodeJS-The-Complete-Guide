@@ -3,7 +3,20 @@ const { join } = require('path');
 const bodyParser = require('body-parser');
 const app = express();
 
-app.set('view engine', 'pug');
+/**
+ * plug in different render engins to the project:
+ * 1. Pug engine;
+ * 2. Handlebars;
+ * 3. EJS.
+ */
+/**1. */
+//app.set('view engine', 'pug');
+/**2. */
+const handlebars = require('express-handlebars');
+app.engine('hbs', handlebars());
+app.set('view engine', 'hbs');
+/**3. */
+
 app.set('views', 'views');
 
 const adminRoutes = require('./routes/admin.js').router;

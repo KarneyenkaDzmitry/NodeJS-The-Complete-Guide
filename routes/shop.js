@@ -4,12 +4,24 @@ const router = express.Router();
 const db = require('./admin').db;
 
 router.get('/', (req, res, next) => {
+    /**for default implementation */
     // res.sendFile(path.join(__dirname, '..', 'views', 'shop.html'));
+
+    /**for pug engine */
+    // res.render('shop', {
+    //     prods: db,
+    //     docTitle: 'Shop',
+    //     path: '/',
+    //     pageTitle: 'Shop',
+    // });
+
+    /**for handlebars engine */
     res.render('shop', {
         prods: db,
         docTitle: 'Shop',
         path: '/',
         pageTitle: 'Shop',
+        hasProducts: db.length > 0,
     });
 });
 
