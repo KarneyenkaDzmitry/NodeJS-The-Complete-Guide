@@ -3,8 +3,12 @@ const { join } = require('path');
 const bodyParser = require('body-parser');
 const app = express();
 
+app.set('view engine', 'pug');
+app.set('views', 'views');
+
 const adminRoutes = require('./routes/admin.js');
 const shopRoutes = require('./routes/shop.js');
+
 app.use(express.static(join(__dirname, 'public')));
 /**
  * When extended property is set to true,
