@@ -5,7 +5,12 @@ const db = require('./admin').db;
 
 router.get('/', (req, res, next) => {
     // res.sendFile(path.join(__dirname, '..', 'views', 'shop.html'));
-    res.render('shop', { prods: db, docTitle: 'Shop' });
+    res.render('shop', {
+        prods: db,
+        docTitle: 'Shop',
+        path: '/',
+        pageTitle: 'Shop',
+    });
 });
 
 module.exports = router;
