@@ -22,6 +22,9 @@ router.get('/', (req, res, next) => {
         path: '/',
         pageTitle: 'Shop',
         hasProducts: db.length > 0,
+        activeShop: true,
+        productCSS: true,
+        /**to Not Use A layout set the property - layout: false,*/
     });
 });
 

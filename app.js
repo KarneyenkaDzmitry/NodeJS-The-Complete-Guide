@@ -13,7 +13,15 @@ const app = express();
 //app.set('view engine', 'pug');
 /**2. */
 const handlebars = require('express-handlebars');
-app.engine('hbs', handlebars());
+// app.engine('hbs', handlebars());
+// add layouts
+app.engine(
+    'hbs',
+    handlebars({
+        layoutsDir: 'views/layouts/',
+        defaultLayout: 'main.layout.hbs',
+    })
+);
 app.set('view engine', 'hbs');
 /**3. */
 
