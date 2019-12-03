@@ -31,7 +31,7 @@ router.get('/', (req, res, next) => {
     res.render('shop', {
         prods: db,
         pageTitle: 'Shop',
-        activeShop: true,
+        path: '/',
     });
 });
 
