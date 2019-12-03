@@ -15,13 +15,20 @@ router.get('/add-product', (req, res, next) => {
     // });
 
     /**for handlebars engine */
+    // res.render('add-product', {
+    //     path: '/admin/add-product',
+    //     pageTitle: 'Add Product',
+    //     hasProducts: db.length > 0,
+    //     activeAddProd: true,
+    //     productCSS: true,
+    //     formCSS: true,
+    // });
+
+    /**for Ejs engine */
     res.render('add-product', {
         path: '/admin/add-product',
         pageTitle: 'Add Product',
-        hasProducts: db.length > 0,
         activeAddProd: true,
-        productCSS: true,
-        formCSS: true,
     });
 });
 

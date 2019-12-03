@@ -12,18 +12,20 @@ const app = express();
 /**1. */
 //app.set('view engine', 'pug');
 /**2. */
-const handlebars = require('express-handlebars');
+// const handlebars = require('express-handlebars');
 // app.engine('hbs', handlebars());
 // add layouts
-app.engine(
-    'hbs',
-    handlebars({
-        layoutsDir: 'views/layouts/',
-        defaultLayout: 'main.layout.hbs',
-    })
-);
-app.set('view engine', 'hbs');
+// app.engine(
+//     'hbs',
+//     handlebars({
+//         layoutsDir: 'views/layouts/',
+//         defaultLayout: 'main.layout.hbs',
+//     })
+// );
+// app.set('view engine', 'hbs');
 /**3. */
+app.set('view engine', 'ejs');
+/** end */
 
 app.set('views', 'views');
 
