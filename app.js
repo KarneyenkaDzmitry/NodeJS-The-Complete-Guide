@@ -2,6 +2,7 @@ const express = require('express');
 const { join } = require('path');
 const bodyParser = require('body-parser');
 const app = express();
+const controller = require('./controllers/404.js');
 
 /**
  * plug in different render engins to the project:
@@ -42,12 +43,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 
-app.use((req, res, next) => {
-    // res.status(404).sendFile(join(__dirname, 'views', '404.html'));
-    res.status(404).render('404', {
-        path: req.url,
-        pageTitle: '404: Not Found',
-    });
-});
+app.use(controller.getError);
 
 app.listen(3000);
