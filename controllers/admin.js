@@ -1,4 +1,4 @@
-const db = [];
+const Product = require('../models/product.js');
 
 module.exports.getAddProduct = (req, res, next) => {
     /**for default implementation */
@@ -28,9 +28,8 @@ module.exports.getAddProduct = (req, res, next) => {
 };
 
 module.exports.postAddProduct = (req, res, next) => {
-    db.push(req.body);
-    console.log(db);
+    const product = new Product(req.body.title);
+    product.save();
+    console.log(Product.fetchAll());
     res.redirect('/');
 };
-
-module.exports.db = db;

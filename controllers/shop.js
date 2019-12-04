@@ -1,4 +1,4 @@
-const db = require('./admin').db;
+const Product = require('../models/product.js');
 
 module.exports.getShop = (req, res, next) => {
     /**for default implementation */
@@ -26,7 +26,7 @@ module.exports.getShop = (req, res, next) => {
 
     /**for Ejs engine */
     res.render('shop', {
-        prods: db,
+        prods: Product.fetchAll(),
         pageTitle: 'Shop',
         path: '/',
     });
