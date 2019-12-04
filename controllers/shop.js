@@ -25,9 +25,12 @@ module.exports.getShop = (req, res, next) => {
     // });
 
     /**for Ejs engine */
-    res.render('shop', {
-        prods: Product.fetchAll(),
-        pageTitle: 'Shop',
-        path: '/',
+
+    return Product.fetchAll().then(products => {
+        return res.render('shop', {
+            prods: products,
+            pageTitle: 'Shop',
+            path: '/',
+        });
     });
 };
