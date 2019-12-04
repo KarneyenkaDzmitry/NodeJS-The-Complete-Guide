@@ -11,7 +11,7 @@ module.exports = class Product {
 
     async save() {
         return fsp
-            .access(path, fs.constants.W_OK | fs.constants.R_OK)
+            .access(path, fs.constants.F_OK)
             .catch(err => {
                 return fsp.writeFile(path, JSON.stringify([]));
             })
@@ -28,7 +28,7 @@ module.exports = class Product {
 
     static fetchAll() {
         return fsp
-            .access(path, fs.constants.W_OK | fs.constants.R_OK)
+            .access(path, fs.constants.F_OK)
             .catch(err => {
                 return fsp.writeFile(path, JSON.stringify([]));
             })

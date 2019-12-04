@@ -21,7 +21,7 @@ module.exports.getAddProduct = (req, res, next) => {
     // });
 
     /**for Ejs engine */
-    res.render('add-product', {
+    res.render('admin/add-product', {
         path: '/admin/add-product',
         pageTitle: 'Add Product',
     });
@@ -30,4 +30,15 @@ module.exports.getAddProduct = (req, res, next) => {
 module.exports.postAddProduct = (req, res, next) => {
     const product = new Product(req.body.title);
     return product.save().then(() => res.redirect('/'));
+};
+
+exports.getProducts = (req, res, next) => {
+    const Product = require('../models/product.js');
+    return Product.fetchAll().then(products => {
+        return res.render('admin/products', {
+            prods: products,
+            pageTitle: 'Products',
+            path: '/admin/products',
+        });
+    });
 };

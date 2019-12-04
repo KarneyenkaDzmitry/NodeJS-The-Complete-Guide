@@ -34,5 +34,9 @@
         "express": "^4.17.1",
         "express-handlebars": "3.0.0",
         "pug": "^2.0.4"
+    },
+    "engines": {
+        "node": ">=10.16.0",
+        "npm": ">=6.9.0"
     }
 }
