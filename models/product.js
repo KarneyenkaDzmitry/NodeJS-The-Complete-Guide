@@ -5,8 +5,11 @@ const { join } = require('path');
 const path = join(__dirname, '..', 'data', 'products.json');
 
 module.exports = class Product {
-    constructor(title) {
+    constructor({ title, imageUrl, description, price }) {
         this.title = title;
+        this.imageUrl = imageUrl;
+        this.description = description;
+        this.price = price;
     }
 
     async save() {
