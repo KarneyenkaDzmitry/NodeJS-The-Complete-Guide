@@ -33,7 +33,6 @@ module.exports.postAddProduct = (req, res, next) => {
 };
 
 exports.getProducts = (req, res, next) => {
-    const Product = require('../models/product.js');
     return Product.fetchAll().then(products => {
         return res.render('admin/products', {
             prods: products,
@@ -41,4 +40,25 @@ exports.getProducts = (req, res, next) => {
             path: '/admin/products',
         });
     });
+};
+
+exports.editProduct = (req, res, next) => {
+    return Product.fetchAll()
+        .then(products => products.find(({ id }) => id == req.params.productId))
+        .then(product => {
+            return res.render('admin/edit-product', {
+                product,
+                pageTitle: `Edit Product: ${product.id}`,
+                path: req.url,
+            });
+        });
+};
+
+exports.postUpdateProduct = (req, res, next) => {
+    const id = req.params.productId;
+    const product = { ...req.body, id };
+    console.log(product);
+    return Product.updateProduct(product).then(product =>
+        res.redirect('/admin/products')
+    );
 };

@@ -4,3 +4,4 @@ message.txt
 package-lock.json
 /.vscode
 data/products.json
+/data/**.json
